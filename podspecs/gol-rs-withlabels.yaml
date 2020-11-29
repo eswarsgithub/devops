@@ -17,10 +17,10 @@ spec:
         version: v1 
     spec:
       containers:
-        -image: saieswarprasad/gameoflife:v1
-         name: gol-rs-cont
-         ports:
-           -containerPort: 8080
-            name: gol-port
+        - image: saieswarprasad/gameoflife:v1
+          name: gol-rs-cont
+          ports:
+            - containerPort: 8080
+              name: gol-port
             
 
