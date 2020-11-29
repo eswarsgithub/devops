@@ -10,6 +10,6 @@ spec:
       nodePort: 32765
   selector:  
     app: gol
-    env:
+    env: dev
   type: NodePort
     
