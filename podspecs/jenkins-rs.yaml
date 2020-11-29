@@ -2,25 +2,25 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: gol-rs-withlabels
+  name: jenkins
 spec:
   minReadySeconds: 30
   replicas: 2
   selector:
     matchLabels:
-      app: gol
-      env: dev
+      app: jenkins
+      env: qa
   template:
     metadata:
       labels: 
-        app: gol
-        env: dev 
+        app: jenkins
+        env: qa
     spec:
       containers:
-        - image: saieswarprasad/gameoflife:v1
-          name: gol-rs-cont
+        - image: jenkins:2.60.3
+          name: jenkins-cont
           ports:
             - containerPort: 8080
-              name: gol-port
+              name: jnk-port
             
 
