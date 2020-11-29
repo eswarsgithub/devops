@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: gol-rs-withlabels
+spec:
+  minReadySeconds: 10
+  replicas: 5
+  selector:
+    matchLabels:
+      app: gol
+      version: v1
+  template:
+    metadata:
+      labels: 
+        app: gol
+        version: v1 
+    spec:
+      containers:
+        -image: saieswarprasad/gameoflife:v1
+         name: gol-rs-cont
+         ports:
+           -containerPort: 8080
+            name: gol-port
+            
+
